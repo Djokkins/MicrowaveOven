@@ -53,7 +53,7 @@ namespace MicrowaveTestIntegration
         [Test]
         public void timer_feedback()
         {
-           _uut.TimerTick
+          // _uut.TimerTick
         }
 
     }
