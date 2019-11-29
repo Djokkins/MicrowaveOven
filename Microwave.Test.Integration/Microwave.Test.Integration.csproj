@@ -60,9 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PowerTube_IT.cs" />
+    <Compile Include="PowerTube_IT1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Timer_IT.cs" />
+    <Compile Include="Timer_IT2.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\OneDrive\UNI\AU\4.semester\SWT\MicrowaveOvenIntegrationTest\MicrowaveOvenUnitTested\MicrowaveOvenClasses\MicrowaveOvenClasses.csproj">

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace MicrowaveTestIntegration
 {
     [TestFixture]
-    class Timer_IT
+    class PowerTube_IT1
     {
         private IButton powerButton;
         private IButton timeButton;
@@ -21,15 +21,15 @@ namespace MicrowaveTestIntegration
         private ILight light;
         private ICookController cooker;
         private IOutput output;
-        private ITimer _uut;
-        private IPowerTube powertube;
+        private ITimer timer;
+        private IPowerTube _uut;
         private IDisplay display;
         private Button button;
-
+        
         [SetUp]
         public void SetUp()
         {
-            powertube = new PowerTube(output);
+            _uut = new PowerTube(output);
             powerButton = new Button();
             timeButton = new Button();
             startCancelButton = new Button();
@@ -37,24 +37,23 @@ namespace MicrowaveTestIntegration
             output = new Output();
             display = new Display(output);
             light = new Light(output);
-            _uut = new Timer();
-            cooker = new CookController(_uut, display, powertube);
+            timer = new Timer();
+            cooker = new CookController(timer, display, _uut);
             ui = new UserInterface(powerButton, timeButton, startCancelButton, door, display, light, cooker);
-            //evt lav fakes, det gør programmet nemmere at teste. IT test er en "unittest" af controlleren. 
         }
+        
         [Test]
-        public void timer_activation()
+        public void powertube_activation() // tester om powertube bliver aktiveret af cookcontroller
         {
-            int time = 5;
-            cooker.StartCooking(50, TimeSpan.FromMinutes(time));
-            Assert.That(_uut.TimeRemaining, Is.EqualTo(time));
+            int power = 90;      
+            cooker.StartCooking(power, TimeSpan.FromMinutes(1));
+            Assert.That(_uut, Is.EqualTo(power));
         }
 
-        [Test]
-        public void timer_feedback()
-        {
-          // _uut.TimerTick
-        }
-
+        //[Test]
+        //public void Powertube_feedback() // tester om powertube melder power tilbage
+        //{
+            
+        //}
     }
 }
