@@ -64,6 +64,7 @@
     <Compile Include="IT_Button_UI.cs" />
     <Compile Include="PowerTube_IT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timer_IT.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\OneDrive\UNI\AU\4.semester\SWT\MicrowaveOvenIntegrationTest\MicrowaveOvenUnitTested\MicrowaveOvenClasses\MicrowaveOvenClasses.csproj">
